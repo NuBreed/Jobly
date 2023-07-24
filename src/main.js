@@ -8,9 +8,19 @@ import {
   faBell,
   faUser,
   faBars,
+  faChevronRight,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserSecret, faMessage, faBell, faUser, faBars)
+library.add(
+  faUserSecret,
+  faMessage,
+  faBell,
+  faUser,
+  faBars,
+  faChevronRight,
+  faXmark
+)
 
 import App from './App.vue'
 

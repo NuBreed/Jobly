@@ -1,12 +1,14 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import NavButton from './NavButton.vue'
+import Aside from './Aside.vue'
+const mobile = ref(false)
 const navInfo = reactive([
   { component: 'Home', link: '/' },
   { component: 'Profile', link: '/profile' },
 ])
-const logged = () => {
-  console.log('msafbsajb')
+const open_sidebar = () => {
+  mobile.value = !mobile.value
 }
 </script>
 <template>
@@ -45,13 +47,16 @@ const logged = () => {
         <button class="block">
           <font-awesome-icon
             :icon="['fas', 'bars']"
-            @click="logged"
+            @click="open_sidebar"
             class="fas"
           />
         </button>
       </div>
     </nav>
   </header>
+  <Aside class="aside" v-if="mobile">
+    <h1>ksnafkasfk</h1>
+  </Aside>
 </template>
 <style scoped>
 .header {
