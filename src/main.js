@@ -7,9 +7,10 @@ import {
   faMessage,
   faBell,
   faUser,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserSecret, faMessage, faBell, faUser)
+library.add(faUserSecret, faMessage, faBell, faUser, faBars)
 
 import App from './App.vue'
 

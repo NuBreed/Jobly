@@ -5,12 +5,15 @@ const navInfo = reactive([
   { component: 'Home', link: '/' },
   { component: 'Profile', link: '/profile' },
 ])
+const logged = () => {
+  console.log('msafbsajb')
+}
 </script>
 <template>
   <header class="header">
     <nav class="navbar">
       <div class="navbar-left">
-        <router-link to="/" class="link">Jobly</router-link>
+        <router-link to="/" class="link">Joblx</router-link>
         <NavButton
           v-for="info in navInfo"
           :navTitle="info.component"
@@ -20,24 +23,32 @@ const navInfo = reactive([
       </div>
       <div class="navbar-left">
         <ul class="navbtns">
-          <router-link class="link" to="/">
+          <router-link class="link none" to="/">
             <span class="before">1</span>
             <font-awesome-icon :icon="['fas', 'message']" class="fas" />
           </router-link>
-          <router-link class="link" to="/">
+          <router-link class="link none" to="/">
             <span class="before">10</span>
             <font-awesome-icon :icon="['fas', 'bell']" class="fas" />
           </router-link>
-          <router-link class="link" to="/">
+          <router-link class="link none" to="/">
             <font-awesome-icon :icon="['fas', 'user']" class="fas" />
           </router-link>
         </ul>
-        <ul class="nav-languages">
+        <ul class="nav-languages none">
           <li class="link">Eng</li>
-
           <li class="link">De</li>
         </ul>
-        <div>Arbeitgeber/Jobschaltung</div>
+        <div class="none">
+          <p>Arbeitgeber/Jobschaltung</p>
+        </div>
+        <button class="block">
+          <font-awesome-icon
+            :icon="['fas', 'bars']"
+            @click="logged"
+            class="fas"
+          />
+        </button>
       </div>
     </nav>
   </header>
@@ -95,5 +106,24 @@ const navInfo = reactive([
   right: -4px;
   border-radius: 50%;
   padding: 4px;
+}
+.block {
+  display: none;
+  background: none;
+  padding: 12px;
+  color: #fff;
+  border: none;
+}
+
+@media screen and (max-width: 640px) {
+  .navbar {
+    width: 100%;
+  }
+  .none {
+    display: none;
+  }
+  .block {
+    display: block;
+  }
 }
 </style>
