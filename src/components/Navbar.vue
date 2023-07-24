@@ -18,7 +18,7 @@ const logged = () => {
           v-for="info in navInfo"
           :navTitle="info.component"
           :link="info.link"
-          class="links-left"
+          class="links-left none"
         />
       </div>
       <div class="navbar-left">
