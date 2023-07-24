@@ -7,7 +7,7 @@ import './assets/customcss.css'
 <template>
   <Navbar />
   <router-view />
-  <Footer class="footer"></Footer>
+  <Footer />
 </template>
 
 <style scoped>
