@@ -5,6 +5,7 @@ const props = defineProps({
     title: String,
     location: String,
     details: String,
+    field: String,
   },
 })
 </script>
@@ -28,28 +29,43 @@ const props = defineProps({
       <p class="job-details"></p>
       <p class="job-details">{{ job.details }}</p>
     </main>
-    <footer>
-      <span> vor {{ job.published }} geschaltet. Für HTML CSS </span>
+    <footer class="job-footer">
+      <span> vor {{ job.published }} geschaltet</span>
       <slot>
-        <span class="job-type"> </span>
+        <span class="job-type"> {{ job.field }}</span>
         <div class="job-hours"></div>
       </slot>
     </footer>
   </div>
 </template>
 <style scoped>
-.header {
-  display: flex;
+.header,
+footer {
+  width: 100%;
 }
+
 .job-title {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  padding: 8px;
+}
+.job-location {
+  text-align: end;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.job-footer {
+  text-align: end;
+  font-size: 16px;
+  padding: 8px;
 }
 .card {
   padding: 12px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  background-color: rgb(170, 215, 170);
+  background-color: rgb(255, 255, 255);
   width: 30%;
   margin: 12px;
   border: 2px solid rgb(230, 235, 230);
@@ -64,6 +80,7 @@ const props = defineProps({
   box-shadow: 4px 2px 32px rgb(61, 56, 24);
 }
 .job-details {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
 }
 </style>

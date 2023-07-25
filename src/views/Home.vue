@@ -21,6 +21,4 @@ import JobSearch from '../components/JobSearch.vue'
   text-align: center;
   height: 50vh;
 }
-section {
-}
 </style>

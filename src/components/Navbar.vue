@@ -4,12 +4,12 @@ import { useSidebarStore } from '../stores/headerStore'
 import NavButton from './NavButton.vue'
 import Aside from './Aside.vue'
 
+const open_sidebar = useSidebarStore()
+
 const navInfo = reactive([
   { component: 'Home', link: '/' },
   { component: 'Profile', link: '/profile' },
 ])
-
-const open_sidebar = useSidebarStore()
 </script>
 <template>
   <header class="header">
