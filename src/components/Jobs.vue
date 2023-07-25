@@ -16,7 +16,6 @@ console.log(jobs.job)
 <template>
   <div class="job-wrapper">
     <h3>Suggested Jobs</h3>
-    <h1>{{ jobs.job }}</h1>
     <JobCard :job="jobs.job" class="job-card" />
     <JobCard :job="jobs.job" class="job-card" />
   </div>

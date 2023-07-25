@@ -66,7 +66,6 @@ footer {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   background-color: rgb(255, 255, 255);
-  width: 30%;
   margin: 12px;
   border: 2px solid rgb(230, 235, 230);
   border-radius: 12px;
