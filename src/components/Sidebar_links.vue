@@ -5,8 +5,8 @@ const props = defineProps({
 </script>
 <template>
   <div class="navlinks">
-    <p class="link-info">{{ job }}</p>
     <router-link to="/">
+      <p class="link-info">{{ job }}</p>
       <font-awesome-icon :icon="['fas', 'chevron-right']" class="fas" />
     </router-link>
   </div>

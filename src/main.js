@@ -11,6 +11,9 @@ import {
   faBars,
   faChevronRight,
   faXmark,
+  faEnvelope,
+  faPhone,
+  faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -20,7 +23,10 @@ library.add(
   faUser,
   faBars,
   faChevronRight,
-  faXmark
+  faXmark,
+  faEnvelope,
+  faPhone,
+  faLocationDot
 )
 
 import App from './App.vue'
