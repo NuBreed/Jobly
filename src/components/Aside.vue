@@ -1,23 +1,18 @@
 <script setup>
-import { useSidebarStore } from '../stores/headerStore'
-const open_sidebar = useSidebarStore()
-
 import Sidebar_links from './Sidebar_links.vue'
+import { useSidebarStore } from '../stores/headerStore'
+
+const aside_links = ['Profile', 'food', 'jsafbf', 'KLFNDLSAF']
+const open_sidebar = useSidebarStore()
 </script>
 <template>
   <main class="aside">
     <div class="aside-content">
-      <div class="aside-header" @click="open_sidebar.toggle">
+      <section class="aside-header" @click="open_sidebar.toggle">
         <font-awesome-icon :icon="['fas', 'xmark']" class="fas" />
-      </div>
-      <section class="aside-center">
-        <Sidebar_links job="peter ajayi" class="links" />
-        <Sidebar_links job="peter ajayi" />
-        <Sidebar_links job="peter ajayi" />
-        <Sidebar_links job="peter ajayi" />
-        <Sidebar_links job="peter ajayi" />
-        <Sidebar_links job="peter ajayi" />
-        <Sidebar_links job="peter ajayi" />
+      </section>
+      <section class="aside-center" v-for="aside_link in aside_links">
+        <Sidebar_links :job="aside_link" class="links" />
       </section>
     </div>
   </main>
@@ -29,23 +24,19 @@ import Sidebar_links from './Sidebar_links.vue'
   right: 0;
   background: #10101b;
   opacity: 0.8;
-  width: 90%;
+  width: 70%;
   height: 100%;
   color: #ffffff;
   padding: 24px 12px;
+  display: none;
 }
 
 .aside-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 24px;
   width: 100%;
   height: 100%;
 }
 .aside-header {
-  position: absolute;
+  text-align: end;
   right: 12px;
   top: 8px;
   margin-bottom: 24px;
@@ -62,5 +53,10 @@ import Sidebar_links from './Sidebar_links.vue'
 .links:hover {
   margin-bottom: 12px;
   box-shadow: 0px 1px 2px #ffffff;
+}
+@media screen and (max-width: 678px) {
+  .aside {
+    display: block;
+  }
 }
 </style>

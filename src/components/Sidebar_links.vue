@@ -6,9 +6,9 @@ const props = defineProps({
 <template>
   <div class="navlinks">
     <p class="link-info">{{ job }}</p>
-    <span>
+    <router-link to="/">
       <font-awesome-icon :icon="['fas', 'chevron-right']" class="fas" />
-    </span>
+    </router-link>
   </div>
 </template>
 <style scoped>
