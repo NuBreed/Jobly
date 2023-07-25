@@ -1,10 +1,13 @@
 <script setup>
+import { useSidebarStore } from '../stores/headerStore'
+const open_sidebar = useSidebarStore()
+
 import Sidebar_links from './Sidebar_links.vue'
 </script>
 <template>
   <main class="aside">
     <div class="aside-content">
-      <div class="aside-header">
+      <div class="aside-header" @click="open_sidebar.toggle">
         <font-awesome-icon :icon="['fas', 'xmark']" class="fas" />
       </div>
       <section class="aside-center">

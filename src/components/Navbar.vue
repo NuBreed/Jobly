@@ -1,15 +1,15 @@
 <script setup>
 import { reactive, ref } from 'vue'
+import { useSidebarStore } from '../stores/headerStore'
 import NavButton from './NavButton.vue'
 import Aside from './Aside.vue'
-const mobile = ref(false)
+
 const navInfo = reactive([
   { component: 'Home', link: '/' },
   { component: 'Profile', link: '/profile' },
 ])
-const open_sidebar = () => {
-  mobile.value = !mobile.value
-}
+
+const open_sidebar = useSidebarStore()
 </script>
 <template>
   <header class="header">
@@ -26,7 +26,7 @@ const open_sidebar = () => {
       <div class="navbar-left">
         <ul class="navbtns">
           <router-link class="link none" to="/">
-            <span class="before">1</span>
+            <span class="before">200</span>
             <font-awesome-icon :icon="['fas', 'message']" class="fas" />
           </router-link>
           <router-link class="link none" to="/">
@@ -47,14 +47,14 @@ const open_sidebar = () => {
         <button class="block">
           <font-awesome-icon
             :icon="['fas', 'bars']"
-            @click="open_sidebar"
+            @click="open_sidebar.toggle"
             class="fas"
           />
         </button>
       </div>
     </nav>
   </header>
-  <Aside class="aside" v-if="mobile">
+  <Aside class="aside" v-if="open_sidebar.open">
     <h1>ksnafkasfk</h1>
   </Aside>
 </template>
