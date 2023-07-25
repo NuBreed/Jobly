@@ -1,26 +1,10 @@
-<script setup>
-import { ref, reactive, watch, computed } from 'vue'
-import Input from './BaseInput.vue'
-
-const handleSubmit = () => {
-  if (!jobSearchString.value) {
-    console.log('sakfnsadgkidsgk')
-  } else {
-    console.log(jobSearchString.value)
-  }
-}
-const jobSearchString = ref('')
-</script>
+<script setup></script>
 <template>
   <main class="main">
     <div>
       <h1 class="hero-title">Joblx</h1>
       <p class="hero-text">for your next job</p>
     </div>
-    <!-- <form @submit.prevent="handleSubmit" novalidate class="form-wrapper">
-      <Input v-model="jobSearchString" title="Your new job" type="text" />
-    </form>
-    <h1>{{ jobSearchString }}</h1> -->
   </main>
 </template>
 <style scoped>

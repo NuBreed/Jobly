@@ -11,14 +11,16 @@ defineProps({
 })
 </script>
 <template>
-  <label>{{ title }}</label>
-  <input
-    class="basic-input"
-    v-bind="$attrs"
-    :placeholder="title"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <section class="wrapper">
+    <label>{{ title }}</label>
+    <input
+      class="basic-input"
+      v-bind="$attrs"
+      :placeholder="title"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+  </section>
   <slot> </slot>
   <!-- <input
     class="slider__input"
@@ -28,15 +30,22 @@ defineProps({
   /> -->
 </template>
 <style scoped>
+.wrapper {
+  width: 100%;
+  text-align: center;
+}
 label {
   color: rgb(16, 16, 27);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 20px;
+  margin: 16px 0;
+  text-align: right;
 }
 input {
-  width: 50vw;
-  padding: 1rem;
-  border: 2px solid rgb(16, 16, 27);
-  border-radius: 8px;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  border: 0.2px solid rgb(16, 16, 27);
+  outline: none;
+  border-radius: 12px;
 }
 </style>

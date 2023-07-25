@@ -11,6 +11,7 @@ const job = reactive({
 </script>
 <template>
   <div class="job-wrapper">
+    <h3>Suggested Jobs</h3>
     <JobCard :job="job" class="job-card" />
     <JobCard :job="job" class="job-card" />
     <JobCard :job="job" class="job-card" />
